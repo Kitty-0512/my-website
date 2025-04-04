@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="resume.css">
+    <style>
+        /* 设置背景图 */
+        body {
+            background-image: url('images/背景.jpg');
+            background-size: cover;  /* 背景图填满整个页面 */
+            background-position: center;  /* 背景图居中显示 */
+            background-attachment: fixed;  /* 背景图固定不随页面滚动 */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 返回主页按钮样式 */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #8a2be2; /* 紫色背景 */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none; /* 去掉链接的下划线 */
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #7a1db8; /* 鼠标悬停时的紫色 */
+        }
+
+        /* 盒子容器样式 */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .box h2 {
+            text-align: center;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .box p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        .box p strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 返回主页按钮 -->
+<a href="index.html" class="back-button">返回主页</a>
+
+<!-- 标题 -->
+<h1 style="text-align: center; font-size: 30px; margin-top: 30px;">个人简历</h1>
+
+<!-- 盒子容器 -->
+<div class="container">
+    <!-- 个人信息 -->
+    <div class="box">
+        <h2>个人信息</h2>
+        <p><strong>姓名：</strong>易晓蕾</p>
+        <p><strong>出生年月：</strong>2005.12</p>
+        <p><strong>就读学校：</strong>中南林业科技大学</p>
+        <p><strong>学历：</strong>本科</p>
+        <p><strong>民族：</strong>汉</p>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="box">
+        <h2>联系方式</h2>
+        <p><strong>电话：</strong>18874150928</p>
+        <p><strong>QQ：</strong>3527626447</p>
+        <p><strong>微信：</strong>i</p>
+        <p><strong>住址：</strong>湖南长沙</p>
+    </div>
+
+    <!-- 兴趣爱好 -->
+    <div class="box">
+        <h2>兴趣爱好</h2>
+        <div class="center-content">
+            <p>旅行</p>
+            <p>看电影</p>
+            <p>美食</p>
+            <p>爬山</p>
+        </div>
+    </div>
+
+    <!-- 特殊技能 -->
+    <div class="box">
+        <h2>特殊技能</h2>
+        <div class="center-content">
+            <p>千里眼顺风耳</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
