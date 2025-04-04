@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的生活</title>
+    <link rel="stylesheet" href="life.css"> <!-- 生活界面的CSS文件 -->
+    <style>
+        /* 设置背景图（与理想界面背景图一致） */
+        body {
+            background-image: url('images/背景.jpg'); /* 修改为你理想界面的背景图 */
+            background-size: cover; /* 背景图覆盖整个页面 */
+            background-position: center; /* 居中显示背景图 */
+            background-attachment: fixed; /* 背景图固定 */
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* 使背景图覆盖整个视口 */
+        }
+
+        /* 设置返回主页按钮 */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: purple;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        /* 设置画廊容器 */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* 设置画廊盒子 */
+        .gallery-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 400px;  /* 图片的高度 */
+        }
+
+        /* 设置单个图片盒子 */
+        .gallery-box .photo {
+            display: none;  /* 隐藏所有图片 */
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-box .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;  /* 保持图片比例并填充盒子 */
+            max-height: 400px;  /* 设置最大高度，防止图片过大 */
+        }
+
+        /* 设置按钮 */
+        .prev-button, .next-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .prev-button {
+            left: 0;
+        }
+
+        .next-button {
+            right: 0;
+        }
+
+        /* 移除视频区域 */
+        .video-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回主界面按钮 -->
+    <a href="index.html" class="home-button">返回注册界面</a>
+
+    <h2>我的生活</h2>
+
+    <!-- 盒子容器 -->
+    <div class="gallery-container">
+        <button class="prev-button" onclick="prevImage()">&#10094;</button>
+        <div class="gallery-box">
+            <div class="photo"><img src="images/1.jpg" alt="生活照片1"></div>
+            <div class="photo"><img src="images/2.jpg" alt="生活照片2"></div>
+            <div class="photo"><img src="images/3.jpg" alt="生活照片3"></div>
+            <div class="photo"><img src="images/4.jpg" alt="生活照片4"></div>
+            <div class="photo"><img src="images/5.jpg" alt="生活照片5"></div>
+            <div class="photo"><img src="images/6.jpg" alt="生活照片6"></div>
+            <div class="photo"><img src="images/7.jpg" alt="生活照片7"></div>
+            <div class="photo"><img src="images/8.jpg" alt="生活照片8"></div>
+            <div class="photo"><img src="images/9.jpg" alt="生活照片9"></div>
+        </div>
+        <button class="next-button" onclick="nextImage()">&#10095;</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;  // 当前显示的图片索引
+        const photos = document.querySelectorAll('.gallery-box .photo');  // 获取所有图片
+        const totalPhotos = photos.length;
+
+        // 显示当前图片
+        function showImage(index) {
+            // 隐藏所有图片
+            photos.forEach(photo => {
+                photo.style.display = 'none';
+            });
+
+            // 显示当前图片
+            photos[index].style.display = 'block';
+        }
+
+        // 显示上一张图片
+        function prevImage() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = totalPhotos - 1;  // 如果是第一张，显示最后一张
+            }
+            showImage(currentIndex);
+        }
+
+        // 显示下一张图片
+        function nextImage() {
+            currentIndex++;
+            if (currentIndex >= totalPhotos) {
+                currentIndex = 0;  // 如果是最后一张，显示第一张
+            }
+            showImage(currentIndex);
+        }
+
+        // 初始化显示第一张图片
+        showImage(currentIndex);
+    </script>
+</body>
+</html>
