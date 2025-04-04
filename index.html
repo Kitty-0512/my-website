@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>个人网站主页</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/背景.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 顶部导航栏 */
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* 登录/注册表单样式 */
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            margin: auto;
+            margin-top: 80px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .form-btn:hover {
+            background: #0056b3;
+        }
+
+        .toggle-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #007BFF;
+            cursor: pointer;
+        }
+
+        /* 主页面内容盒子 */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .box a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            text-shadow: 2px 2px 5px black;
+        }
+    </style>
+</head>
+<body onload="showRegisterForm()">
+
+<!-- 顶部导航 -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showRegisterForm()">注册</a></li>
+            <li><a href="#" onclick="showLoginForm()">登录</a></li>
+            <li><a href="#" onclick="showHomepage()">主页</a></li>
+            <li><a href="#" onclick="logout()">退出登录</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 登录注册区域 -->
+<div class="form-container" id="form-container" style="display: none;">
+    <div id="login-form" style="display: block;">
+        <h2>登录</h2>
+        <input type="text" class="input-field" placeholder="用户名或邮箱" />
+        <input type="password" class="input-field" placeholder="密码" />
+        <button class="form-btn">登录</button>
+        <div class="toggle-link" onclick="toggleForm()">没有账号？注册</div>
+    </div>
+
+    <div id="register-form" style="display: none;">
+        <h2>注册</h2>
+        <input type="text" class="input-field" placeholder="用户名" />
+        <input type="email" class="input-field" placeholder="邮箱" />
+        <input type="password" class="input-field" placeholder="密码" />
+        <input type="password" class="input-field" placeholder="确认密码" />
+        <button class="form-btn">注册</button>
+        <div class="toggle-link" onclick="toggleForm()">已有账号？登录</div>
+    </div>
+</div>
+
+<!-- 主页面内容 -->
+<div id="homepage" style="display: block;">
+    <h1>欢迎来到 Kitty 的个人主页</h1>
+    <div class="container">
+        <div class="box"><a href="resume.html">个人简历</a></div>
+        <div class="box"><a href="ideal.html">我的理想</a></div>
+        <div class="box"><a href="life.html">我的生活</a></div>
+        <div class="box"><a href="study.html">学习内容</a></div>
+    </div>
+</div>
+
+<script>
+    function showLoginForm() {
+        document.getElementById("form-container").style.display = "block";
+        document.getElementById("login-form").style.display = "block";
+        document.getElementById("register-form").style.display = "none";
+        document.getElementById("homepage").style.display = "none";
+    }
+
+    function showRegisterForm() {
+        document.getElementById("form-container").style.display = "block";
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("register-form").style.display = "block";
+        document.getElementById("homepage").style.display = "none";
+    }
+
+    function showHomepage() {
+        document.getElementById("form-container").style.display = "none";
+        document.getElementById("homepage").style.display = "block";
+    }
+
+    function toggleForm() {
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+        if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+            registerForm.style.display = "none";
+        } else {
+            loginForm.style.display = "none";
+            registerForm.style.display = "block";
+        }
+    }
+
+    function logout() {
+        alert("退出登录成功");
+        showRegisterForm();  // 点击退出登录后直接显示注册表单
+    }
+</script>
+</body>
+</html>
