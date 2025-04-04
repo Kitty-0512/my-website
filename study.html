@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习内容</title>
+    <style>
+        /* 设置页面背景图 */
+        body {
+            background-image: url('images/背景.jpg'); /* 替换为你主界面相同的背景图路径 */
+            background-size: cover; /* 背景图覆盖整个页面 */
+            background-position: center; /* 背景图居中 */
+            background-attachment: fixed; /* 背景图固定不随滚动 */
+            font-family: Arial, sans-serif; /* 设置字体 */
+            color: white; /* 设置文字颜色为白色 */
+        }
+
+        .schedule-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .schedule-box {
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            border: 2px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* 设置背景色为半透明白色，避免文字不清晰 */
+            border-radius: 10px; /* 圆角效果 */
+        }
+
+        .schedule-box img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .summary {
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            color: black;
+        }
+
+        /* 返回按钮样式 */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #8a2be2; /* 紫色 */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #7a1db8; /* 鼠标悬停时的紫色 */
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">返回注册界面</button>
+
+
+    <h2>我的课表</h2>
+
+    <!-- 课表容器 -->
+    <div class="schedule-container">
+        <div class="schedule-box">
+            <img src="images/课表.jpg" alt="课表"> <!-- 课表图片 -->
+        </div>
+
+        <div class="summary">
+            <h3>课程总结</h3>
+            <ul>
+                <li><strong>数学类</strong></li>
+                <li>概率论与数理统计：学习概率分布、随机变量、统计推断等，主要用于算法、机器学习、数据分析等方向。</li>
+                <li>数学电子技术：涉及数字电路、逻辑门、电子元件等，计算机底层知识，对硬件、嵌入式开发有帮助。</li>
+                <br>
+                <li><strong>政治理论类</strong></li>
+                <li>毛泽东思想和中国特色社会主义理论体系概论：理解中国现代化建设的发展过程，大学政治必修课。</li>
+                <li>习近平新时代中国特色社会主义思想：时政课程，主要学习国家发展战略、经济、科技等方面的政策理论。</li>
+                <br>
+                <li><strong>计算机核心课程</strong></li>
+                <li>软件工程：学习软件开发生命周期、需求分析、架构设计、测试等，是软件开发的基本框架。</li>
+                <li>算法分析与设计：研究各种算法的时间复杂度、空间复杂度，优化问题求解方案，是计算机科学的核心。</li>
+                <li>Python大数据处理：涉及Python在数据分析、机器学习、大数据领域的应用，比如pandas、numpy、spark等。</li>
+                <li>J2EE应用开发：学习Java企业级开发，涉及Spring、Servlet、JSP等，偏向Web后端开发。</li>
+                <br>
+                <li><strong>通识类</strong></li>
+                <li>大学英语：提升英语阅读、写作、听力能力，对技术文档阅读、考研、出国深造有帮助。</li>
+            </ul>
+            <p><strong>总体来看：</strong> 课程安排涵盖了数学基础、编程技术、软件开发，以及大数据、Java后端等具体应用。  
+            如果想走后端开发，J2EE + 软件工程 是重点；如果想进大数据、人工智能方向，概率统计 + Python大数据处理 是关键。  
+            课程任务不轻松，但掌握了就是一整套扎实的计算机技术体系！</p>
+        </div>
+    </div>
+</body>
+</html>
